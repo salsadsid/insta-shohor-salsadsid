@@ -142,13 +142,16 @@ const showPosts = (posts) => {
   });
 };
 
+const clearField = (idName, text) => {
+  const fieldDiv = document.getElementById(idName);
+  fieldDiv.textContent = "";
+  const h1 = document.createElement('h1');
+  h1.innerText = text;
+  fieldDiv.appendChild(h1);
+}
 
 const displayLikedPosts = () => {
-  const likedDiv = document.getElementById("liked");
-  likedDiv.textContent = "";
-  const h1 = document.createElement('h1');
-  h1.innerText = "Liked posts";
-  likedDiv.appendChild(h1);
+  clearField("liked", "Liked posts");
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
     const div = createPost(post);
@@ -157,6 +160,7 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+  clearField("reported", "Reported posts");
   const reportedPosts = getReportedPosts();
   reportedPosts.forEach((post) => {
     const div = createPost(post);
