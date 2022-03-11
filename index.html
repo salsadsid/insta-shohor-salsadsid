@@ -57,7 +57,7 @@
             <!-- <h1>Reported posts</h1> -->
         </div>
     </main>
-    <section class="container mt-3">
+    <section class="container mt-3" id="faq-container">
         <h1 class="text-center mb-4">Frequently Asked Questions (FAQ)</h1>
         <div class="bg-light bg-gradient rounded my-2">
             <div class="border border-4 border-danger border-top-0 border-bottom-0 border-end-0 mb-0 rounded-top">
@@ -85,10 +85,9 @@
                         <li><strong> Memory heap</strong></li>
                         <li><strong> Call stack</strong></li>
                     </ol>
-                    Memory heap is like memory which can stores data in a different way. Call stack
-                    is
-                    the stack frame where code executes in a specified way. Every entry in call stack in called stack
-                    frame. JavaScript has single call stack. Which means it can do one thing at a time.
+                    Memory heap stores data in a specified way. Every function in the call stack is called a stack
+                    frame. Code executes one by one in the call stack. After finishing all stack frames the call stack
+                    becomes empty.
                 </div>
             </div>
         </div>
@@ -100,18 +99,20 @@
             <div class="border border-4 border-secondary border-top-0 border-bottom-0 border-end-0 mt-0 rounded-bottom">
                 <div class="text-secondary mt-0 ms-3">
                     <p><span class="fs-1 fw-bold lh-1">A.</span> There is a problem when a
-                        function in the call stack takes huge amount of time. Like rendering weather condition with a
+                        function in the call stack takes a huge amount of time. Like rendering weather conditions with a
                         huge
-                        number of parameters. Code executes one by one. But when it takes huge amount of time, it's
+                        number of parameters. Code executes one by one. But when it takes a huge amount of time, it's
                         getting
-                        blocked. That's a bad User Experience. The solution of this problem is asynchronous callbacks.
+                        blocked. There is a solution to this problem: asynchronous
+                        callbacks done by the event loop.
                         If a
-                        function can take huge amount of time, the function sent in the task queue. Regular code from
+                        function takes a huge amount of time, the function is sent to the task queue. Regular code from
                         the
-                        call stack exectuted in
-                        regular way. Finally event loop arrives. Event loop observes the call stack. When the call stack
+                        call stack is executed in
+                        a regular way. The event loop observes the call stack. When the call stack
                         is
-                        empty, Event loop grap function from the queue and sent it to the queue. Event loop processing
+                        empty, the Event loop grap function from the queue and sent it to the queue. Event loop
+                        processing
                         events in a loop. </p>
                     <p> <strong>
                             Call stack empty <span class="fs-5 lh-1">=&gt;</span> Pushing code from task queue to call
@@ -120,7 +121,7 @@
                             the
                             code
                             <span class="fs-5 lh-1">=&gt;</span> again call stack empty</strong></p>
-                    <p>This is how event loop works</p>
+                    <p>This is how event loop works. </p>
                 </div>
             </div>
         </div>
@@ -131,7 +132,7 @@
                 </h3>
             </div>
             <div class="border border-4 border-secondary border-top-0 border-bottom-0 border-end-0 mt-0 rounded-bottom">
-                <p class="text-secondary mt-0 ms-3"><span class="fs-1 fw-bold lh-1">A.</span>Local storage and session
+                <p class="text-secondary mt-0 ms-3"><span class="fs-1 fw-bold lh-1">A.</span> Local storage and session
                     storage, both are web applications. Those two types of storage can stores data. Data about user's
                     according to the websites. Local storage stores data for a long time. Session storage stores data
                     for a short time. Session storage's data will be vanished, When user leaves the website. But Local
